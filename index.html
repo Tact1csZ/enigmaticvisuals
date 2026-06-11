@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enigmatic Visuals | Photography</title>
     <style>
-        /* CSS Styles */
+        /* ==========================================================================
+           DESKTOP & BASE STYLES (Default)
+           ========================================================================== */
         body {
             margin: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -14,25 +16,34 @@
             text-align: center;
         }
         header {
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem 2rem;
+            background: rgba(0, 0, 0, 0.9);
             position: fixed;
             width: 100%;
+            box-sizing: border-box; /* Prevents header from stretching past screen width */
             top: 0;
             z-index: 100;
+            display: flex;
+            justify-content: space-between; /* Pushes title to left, nav to right */
+            align-items: center;
         }
         h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
             letter-spacing: 2px;
             color: #d4af37;
         }
         nav a {
             color: #e0e0e0;
             text-decoration: none;
-            margin: 0 15px;
+            margin-left: 20px;
             font-size: 0.9rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4af37;
         }
         .hero {
             height: 100vh;
@@ -40,41 +51,91 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Fixed extension to uppercase JPG here */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Stones.JPG') center/cover;
+            padding: 0 20px;
         }
         .hero h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 0;
         }
         .btn {
-            padding: 10px 25px;
+            padding: 12px 30px;
             background-color: #d4af37;
             color: #1a1a1a;
             text-decoration: none;
             font-weight: bold;
             border-radius: 3px;
             margin-top: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem 4rem 2rem; /* Added top padding so fixed header doesn't block titles */
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
+            gap: 20px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .gallery-item {
             background-color: #333;
-            height: 250px;
+            height: 300px;
             border-radius: 5px;
-            overflow: hidden; /* Ensures images respect the rounded borders */
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         footer {
             background-color: #0d0d0d;
             padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* ==========================================================================
+           MOBILE OPTIMIZATION (Screens under 768px wide)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack Title on top of Links */
+                padding: 1rem;
+                position: absolute; /* Prevents fixed header eating precious screen space on mobile */
+            }
+            h1 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+            nav a {
+                margin: 0 10px; /* Space out links evenly horizontally */
+                font-size: 0.8rem;
+            }
+            .hero {
+                justify-content: center;
+                padding-top: 60px; /* Offset for stacked header */
+            }
+            .hero h2 {
+                font-size: 2.2rem; /* Shrink title text so it doesn't break into awkward lines */
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            section {
+                padding: 4rem 1rem; /* Shrink heavy desktop paddings */
+            }
+            .gallery {
+                grid-template-columns: 1fr; /* Force images to stack into a clean single column */
+                gap: 15px;
+            }
+            .gallery-item {
+                height: 250px; /* Slightly shorter frames for quick scrolling */
+            }
         }
     </style>
 </head>
@@ -109,7 +170,7 @@
 
     <section id="about">
         <h2>The Team behind the Lens</h2>
-        <p style="max-width: 600px; margin: 0 auto;">
+        <p style="max-width: 600px; margin: 0 auto; line-height: 1.6;">
             We are a husband and wife photography team dedicated to capturing authentic moments and telling stories through a unique, moody, and natural perspective. Whether it's an intimate portrait session or a local branding project, our focus is on making you feel comfortable while we handle the creative heavy lifting.
         </p>
     </section>
@@ -117,7 +178,8 @@
     <section id="contact" style="background-color: #222;">
         <h2>Let's Create Something Together</h2>
         <p>Based in Waynesville, North Carolina — Available for travel.</p>
-        <p>Email: enigmaticarts.sb@outlook.com</p> </section>
+        <p>Email: enigmaticarts.sb@outlook.com</p>
+    </section>
 
     <footer>
         <p>&copy; 2026 Enigmatic Visuals Photography</p>
