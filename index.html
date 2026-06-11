@@ -99,8 +99,14 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer; /* Changes mouse cursor to a pointing hand on hover */
+            transition: transform 0.3s, filter 0.3s;
         }
-        /* Style for placeholder messaging when galleries are empty */
+        /* Subtly pops the image out when hovered */
+        .gallery-item:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
         .coming-soon-box {
             grid-column: 1 / -1;
             padding: 40px;
@@ -114,6 +120,55 @@
             padding: 2rem;
             font-size: 0.9rem;
             color: #777;
+        }
+
+        /* ==========================================================================
+           LIGHTBOX POP-UP WINDOW STYLES
+           ========================================================================== */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Deep dark backdrop */
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        /* Class applied automatically by JavaScript when image is clicked */
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .lightbox-overlay.active .lightbox-img {
+            transform: scale(1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        .lightbox-close:hover {
+            color: #d4af37;
         }
 
         /* ==========================================================================
@@ -152,6 +207,11 @@
             .gallery-item {
                 height: 250px;
             }
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -178,7 +238,7 @@
         <p style="max-width: 600px; margin: 0 auto 30px auto; color: #aaa;">
             Original, moody art designs crafted by hand. Every piece in our upcoming collection will be available as a premium, professional-grade canvas print.
         </p>
-        <div class="gallery">
+        <div class="gallery" id="artwork-gallery">
             <div class="coming-soon-box">
                 <p>Custom canvas print collection arriving soon. Inquire directly for commission requests.</p>
             </div>
@@ -188,7 +248,7 @@
     <section id="photography" class="bg-dark-alternate">
         <h2>Photography Portfolio</h2>
         <p style="max-width: 600px; margin: 0 auto 30px auto; color: #aaa;">
-            Authentic action capture, striking portraiture, and atmospheric landscape imagery shot with a deep, dramatic perspective.
+            Authentic action capture, striking portraiture, and atmospheric landscape imagery shot with a deep, dramatic perspective. Click any photograph to view it in full screen.
         </p>
         <div class="gallery">
             <div class="gallery-item"><img src="Ball.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
@@ -216,9 +276,44 @@
         <p>Email us at: <a href="mailto:enigmaticarts.sb@outlook.com" style="color: #fff; text-decoration: underline;">enigmaticarts.sb@outlook.com</a></p>
     </section>
 
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-target" src="" alt="Enlarged view">
+    </div>
+
     <footer>
         <p>&copy; 2026 Enigmatic Visuals | All Rights Reserved</p>
     </footer>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxTarget = document.getElementById('lightbox-target');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+
+        // Open Lightbox when clicking any image inside a gallery-item
+        galleryItems.forEach(image => {
+            image.parentElement.addEventListener('click', () => {
+                lightboxTarget.src = image.src;
+                lightboxTarget.alt = image.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close Lightbox clicking the "X"
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxTarget.src = ""; // Clear memory path
+        });
+
+        // Close Lightbox clicking anywhere on the dark background
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                lightboxTarget.src = "";
+            }
+        });
+    </script>
 
 </body>
 </html>
