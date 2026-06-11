@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enigmatic Visuals | Photography & Fine Art</title>
+    <title>Enigmatic Visuals | Elite Photography & Fine Art</title>
     <style>
         /* ==========================================================================
-           DESKTOP & BASE STYLES (Default)
+           BASE SYSTEM & LUXURY RESETS
            ========================================================================== */
         html {
             scroll-behavior: smooth;
         }
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #121212; /* Darkened background for deeper studio feel */
-            color: #e0e0e0;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0a0a; /* Pure elite deep dark background */
+            color: #f5f5f7;
             text-align: center;
             -webkit-font-smoothing: antialiased;
         }
+        
+        /* ==========================================================================
+           FROSTED GLASS NAVIGATION HEADER
+           ========================================================================== */
         header {
-            padding: 1.5rem 2rem;
-            /* VISUAL UPGRADE: Luxury frosted glass aesthetic */
-            background: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            padding: 1.8rem 3rem;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             position: fixed;
             width: 100%;
             box-sizing: border-box;
@@ -33,179 +36,200 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
         h1 {
             margin: 0;
-            font-size: 1.4rem;
-            letter-spacing: 3px;
+            font-size: 1.25rem;
+            letter-spacing: 4px;
             color: #d4af37;
-            font-weight: 400;
+            font-weight: 300;
+            text-transform: uppercase;
         }
         nav a {
-            color: #a0a0a0;
+            color: #8e8e93;
             text-decoration: none;
-            margin-left: 24px;
-            font-size: 0.8rem;
+            margin-left: 30px;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: color 0.3s, letter-spacing 0.3s;
+            transition: color 0.4s ease, transform 0.4s ease;
+            display: inline-block;
         }
         nav a:hover {
             color: #d4af37;
-            letter-spacing: 2.5px;
+            transform: translateY(-1px);
         }
+
+        /* ==========================================================================
+           CINEMATIC HERO LANDING
+           ========================================================================== */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('Stones.JPG') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('Stones.JPG') center/cover;
             padding: 0 20px;
         }
         .hero h2 {
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             margin-bottom: 15px;
-            letter-spacing: 2px;
-            font-weight: 300;
-            /* VISUAL UPGRADE: Metallic gradient text */
-            background: linear-gradient(135deg, #ffffff 30%, #a0a0a0 100%);
+            letter-spacing: 3px;
+            font-weight: 200;
+            background: linear-gradient(180deg, #ffffff 40%, #a2a2a2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-top: 0;
-            letter-spacing: 2px;
-            color: #b0b0b0;
+            letter-spacing: 3px;
+            color: #86868b;
             font-weight: 300;
             text-transform: uppercase;
         }
         .btn {
-            padding: 14px 36px;
+            padding: 15px 40px;
             background-color: transparent;
             color: #d4af37;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 25px;
+            font-weight: 500;
+            margin-top: 30px;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
             display: inline-block;
-            border: 1px solid #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.5);
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.4s ease;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .btn:hover {
             background-color: #d4af37;
-            color: #121212;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-        }
-        section {
-            padding: 8rem 2rem 6rem 2rem;
-        }
-        .bg-dark-alternate {
-            background-color: #181818;
-        }
-        section h2 {
-            font-size: 2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .gallery-item {
-            background-color: #1f1f1f;
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            /* VISUAL UPGRADE: Sleek frame boundary lines */
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
-        }
-        /* VISUAL UPGRADE: Elegant reveal on hover */
-        .gallery-item:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transform: translateY(-4px);
-        }
-        .gallery-item:hover img {
-            transform: scale(1.05);
-            filter: brightness(1.08);
-        }
-        .coming-soon-box {
-            grid-column: 1 / -1;
-            padding: 60px 20px;
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-            color: #666;
-            font-style: italic;
-            letter-spacing: 1px;
+            color: #0a0a0a;
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
         /* ==========================================================================
-           VISUAL UPGRADE: LUXURY CONTACT FORM INPUTS
+           EDITORIAL SECTIONS
+           ========================================================================== */
+        section {
+            padding: 10rem 4rem 8rem 4rem; /* Wide breathing space */
+        }
+        .bg-dark-alternate {
+            background-color: #0e0e0e;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 200;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .section-desc {
+            max-width: 600px; 
+            margin: 0 auto 60px auto; 
+            color: #86868b; 
+            font-size: 0.9rem; 
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           ELITE MASONRY GALLERY (No Awkward Crops)
+           ========================================================================== */
+        .masonry-gallery {
+            columns: 3;
+            column-gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            background-color: #121212;
+            margin-bottom: 25px;
+            break-inside: avoid; /* Prevents split images across columns */
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+        }
+        .gallery-item:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05);
+        }
+        .coming-soon-box {
+            padding: 80px 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.05);
+            color: #515154;
+            font-style: italic;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           MINIMALIST CONTACT FORM STYLING
            ========================================================================== */
         .contact-container {
-            max-width: 600px;
+            max-width: 550px;
             margin: 40px auto 0 auto;
             text-align: left;
         }
         .form-group {
-            margin-bottom: 28px;
+            margin-bottom: 35px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 10px;
-            font-size: 0.75rem;
+            margin-bottom: 12px;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #888;
-            font-weight: 600;
+            color: #6e6e73;
+            font-weight: 500;
         }
         .form-control {
             width: 100%;
-            padding: 14px 0;
+            padding: 12px 0;
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #2c2c2e;
             color: #fff;
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 0.95rem;
             box-sizing: border-box;
             border-radius: 0;
-            transition: border-color 0.3s, padding-left 0.3s;
+            transition: border-color 0.4s ease, padding-left 0.4s ease;
         }
         .form-control:focus {
             outline: none;
             border-bottom-color: #d4af37;
-            padding-left: 5px;
+            padding-left: 4px;
         }
         select.form-control {
             cursor: pointer;
-            background-color: #121212;
-            padding-bottom: 10px;
+            background-color: #0e0e0e;
+            padding-bottom: 12px;
         }
 
         /* ==========================================================================
-           LIGHTBOX POP-UP WINDOW STYLES
+           PURE BLACK VOID LIGHTBOX OVERLAY
            ========================================================================== */
         .lightbox-overlay {
             position: fixed;
@@ -213,26 +237,25 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(10, 10, 10, 0.98);
+            background-color: #000000; /* Absolute focus on the image */
             z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .lightbox-overlay.active {
             opacity: 1;
             pointer-events: auto;
         }
         .lightbox-img {
-            max-width: 92%;
-            max-height: 85vh;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.8);
-            transform: scale(0.97);
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            max-width: 95%;
+            max-height: 90vh;
+            object-fit: contain;
+            transform: scale(0.98);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .lightbox-overlay.active .lightbox-img {
             transform: scale(1);
@@ -241,41 +264,41 @@
             position: absolute;
             top: 30px;
             right: 40px;
-            color: #888;
-            font-size: 2.5rem;
-            font-weight: 200;
+            color: #6e6e73;
+            font-size: 2rem;
+            font-weight: 100;
             cursor: pointer;
             user-select: none;
-            transition: color 0.2s, transform 0.2s;
+            transition: color 0.3s, transform 0.3s;
         }
         .lightbox-close:hover {
             color: #d4af37;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* ==========================================================================
-           SCROLL TO TOP BUTTON
+           SCROLL TO TOP MICRO ARROW
            ========================================================================== */
         .scroll-top-btn {
             position: fixed;
             bottom: 40px;
             right: 40px;
-            width: 48px;
-            height: 48px;
-            background-color: rgba(20, 20, 20, 0.85);
+            width: 44px;
+            height: 44px;
+            background-color: rgba(10, 10, 10, 0.8);
             color: #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             text-decoration: none;
             z-index: 99;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
         }
         .scroll-top-btn.show {
             opacity: 1;
@@ -284,72 +307,61 @@
         .scroll-top-btn:hover {
             border-color: #d4af37;
             background-color: #d4af37;
-            color: #121212;
-            transform: translateY(-3px);
+            color: #0a0a0a;
+            transform: translateY(-2px);
         }
 
         footer {
-            background-color: #0a0a0a;
-            padding: 3rem 2rem;
-            font-size: 0.8rem;
-            color: #555;
+            background-color: #050505;
+            padding: 4rem 2rem;
+            font-size: 0.75rem;
+            color: #424245;
             letter-spacing: 1px;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.01);
         }
 
         /* ==========================================================================
-           MOBILE OPTIMIZATION (Screens under 768px wide)
+           DYNAMIC MOBILE RESPONSIVENESS (Responsive Column Collapsing)
            ========================================================================== */
+        @media (max-width: 1024px) {
+            .masonry-gallery {
+                columns: 2; /* 2 Columns for tablets */
+            }
+        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 1.2rem 1rem;
+                padding: 1.5rem 1rem;
                 position: absolute;
             }
             h1 {
-                font-size: 1.2rem;
-                margin-bottom: 12px;
+                font-size: 1.1rem;
+                margin-bottom: 14px;
             }
             nav a {
-                margin: 0 12px;
-                font-size: 0.75rem;
-                letter-spacing: 1px;
-            }
-            nav a:hover {
+                margin: 0 14px;
+                font-size: 0.7rem;
                 letter-spacing: 1px;
             }
             .hero {
                 padding-top: 80px;
             }
             .hero h2 {
-                font-size: 2.4rem;
-            }
-            .hero p {
-                font-size: 0.9rem;
+                font-size: 2.6rem;
             }
             section {
-                padding: 5rem 1.5rem;
+                padding: 6rem 1.5rem;
             }
-            section h2 {
-                font-size: 1.6rem;
-            }
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .gallery-item {
-                height: 260px;
+            .masonry-gallery {
+                columns: 1; /* 1 Clean full-width column for phones */
             }
             .lightbox-close {
-                top: 20px;
+                top: 25px;
                 right: 25px;
-                font-size: 2.2rem;
             }
             .scroll-top-btn {
                 bottom: 25px;
                 right: 25px;
-                width: 42px;
-                height: 42px;
             }
         }
     </style>
@@ -376,34 +388,33 @@
 
     <section id="artwork">
         <h2>Fine Art Collection</h2>
-        <p style="max-width: 600px; margin: 0 auto 40px auto; color: #888; font-size: 0.95rem; letter-spacing: 0.5px;">
+        <p class="section-desc">
             Original, moody art designs crafted by hand. Every piece in our upcoming collection will be available as a premium, professional-grade canvas print.
         </p>
-        <div class="gallery">
-            <div class="coming-soon-box">
-                <p>Custom canvas print collection arriving soon. Inquire directly for commission requests.</p>
-            </div>
+        <div class="coming-soon-box">
+            <p>Custom canvas print collection arriving soon. Inquire directly for commission requests.</p>
         </div>
     </section>
 
     <section id="photography" class="bg-dark-alternate">
         <h2>Photography Portfolio</h2>
-        <p style="max-width: 600px; margin: 0 auto 40px auto; color: #888; font-size: 0.95rem; letter-spacing: 0.5px;">
+        <p class="section-desc">
             Authentic action capture, striking portraiture, and atmospheric landscape imagery shot with a deep, cinematic perspective. Click any photograph to view full size.
         </p>
-        <div class="gallery">
-            <div class="gallery-item"><img src="Ball.JPG" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Ball2.JPG" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Ball3.JPG" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Leaves.JPG" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Mill.JPG" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Stones.JPG" alt="Photography Portfolio Piece"></div>
+        
+        <div class="masonry-gallery">
+            <div class="gallery-item"><img src="Ball.JPG" alt="Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Ball2.JPG" alt="Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Ball3.JPG" alt="Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Leaves.JPG" alt="Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Mill.JPG" alt="Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Stones.JPG" alt="Portfolio Piece"></div>
         </div>
     </section>
 
     <section id="about">
         <h2>Behind the Lens & Canvas</h2>
-        <p style="max-width: 650px; margin: 0 auto; line-height: 1.8; color: #b0b0b0; font-size: 1rem; font-weight: 300; letter-spacing: 0.5px;">
+        <p style="max-width: 650px; margin: 0 auto; line-height: 1.9; color: #a1a1a6; font-size: 0.95rem; font-weight: 300; letter-spacing: 0.5px;">
             We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic photography and original fine artwork, we offer custom visual creations designed to stand out. 
             <br><br>
             Every piece of art in our collection is available as a premium, professional-grade canvas print, curated and handled directly by us to bring a bold aesthetic right to your walls.
@@ -412,7 +423,7 @@
 
     <section id="contact" class="bg-dark-alternate">
         <h2>Let's Create Something Together</h2>
-        <p style="color: #888; font-size: 0.95rem; margin-bottom: 40px;">Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
+        <p style="color: #6e6e73; font-size: 0.9rem; margin-bottom: 40px;">Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
         
         <div class="contact-container">
             <form id="nativeMailForm" onsubmit="sendEmail(event)">
@@ -455,7 +466,7 @@
     </footer>
 
     <script>
-        // --- Lightbox Code ---
+        // --- High-Performance Lightbox Mechanics ---
         const lightbox = document.getElementById('lightbox');
         const lightboxTarget = document.getElementById('lightbox-target');
         const lightboxClose = document.getElementById('lightbox-close');
@@ -469,29 +480,25 @@
             });
         });
 
-        lightboxClose.addEventListener('click', () => {
+        const closeLightbox = () => {
             lightbox.classList.remove('active');
-            lightboxTarget.src = "";
-        });
+            setTimeout(() => { lightboxTarget.src = ""; }, 500); // Wait for fade-out before clearing source
+        };
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                lightboxTarget.src = "";
-            }
-        });
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 
-        // --- Scroll-to-Top Visibility Toggle ---
+        // --- Scroll UI State Controller ---
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 400) {
                 scrollTopBtn.classList.add('show');
             } else {
                 scrollTopBtn.classList.remove('show');
             }
         });
 
-        // --- DIRECT EMAIL CLIENT LAUNCH ---
+        // --- DIRECT EMAIL APP EXECUTION ---
         function sendEmail(event) {
             event.preventDefault();
             
