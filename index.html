@@ -8,16 +8,23 @@
         /* ==========================================================================
            DESKTOP & BASE STYLES (Default)
            ========================================================================== */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #1a1a1a;
+            background-color: #121212; /* Darkened background for deeper studio feel */
             color: #e0e0e0;
             text-align: center;
+            -webkit-font-smoothing: antialiased;
         }
         header {
             padding: 1.5rem 2rem;
-            background: rgba(0, 0, 0, 0.9);
+            /* VISUAL UPGRADE: Luxury frosted glass aesthetic */
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             box-sizing: border-box;
@@ -26,24 +33,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         h1 {
             margin: 0;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
             color: #d4af37;
+            font-weight: 400;
         }
         nav a {
-            color: #e0e0e0;
+            color: #a0a0a0;
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
+            margin-left: 24px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            letter-spacing: 2px;
+            transition: color 0.3s, letter-spacing 0.3s;
         }
         nav a:hover {
             color: #d4af37;
+            letter-spacing: 2.5px;
         }
         .hero {
             height: 100vh;
@@ -51,75 +61,147 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Stones.JPG') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('Stones.JPG') center/cover;
             padding: 0 20px;
         }
         .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 3.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 300;
+            /* VISUAL UPGRADE: Metallic gradient text */
+            background: linear-gradient(135deg, #ffffff 30%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 0;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: #b0b0b0;
+            font-weight: 300;
+            text-transform: uppercase;
         }
         .btn {
-            padding: 12px 30px;
-            background-color: #d4af37;
-            color: #1a1a1a;
+            padding: 14px 36px;
+            background-color: transparent;
+            color: #d4af37;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 3px;
-            margin-top: 20px;
+            font-weight: 600;
+            margin-top: 25px;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             display: inline-block;
+            border: 1px solid #d4af37;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.4s ease;
         }
         .btn:hover {
-            background-color: #bfa030;
+            background-color: #d4af37;
+            color: #121212;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
         section {
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 8rem 2rem 6rem 2rem;
         }
         .bg-dark-alternate {
-            background-color: #222222;
+            background-color: #181818;
+        }
+        section h2 {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #fff;
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .gallery-item {
-            background-color: #333;
-            height: 300px;
-            border-radius: 5px;
+            background-color: #1f1f1f;
+            height: 320px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            cursor: pointer; /* Changes mouse cursor to a pointing hand on hover */
-            transition: transform 0.3s, filter 0.3s;
+            position: relative;
+            cursor: pointer;
+            /* VISUAL UPGRADE: Sleek frame boundary lines */
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        /* Subtly pops the image out when hovered */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+        }
+        /* VISUAL UPGRADE: Elegant reveal on hover */
         .gallery-item:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            transform: translateY(-4px);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.08);
         }
         .coming-soon-box {
             grid-column: 1 / -1;
-            padding: 40px;
-            border: 1px dashed #444;
-            border-radius: 5px;
-            color: #888;
+            padding: 60px 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            color: #666;
             font-style: italic;
+            letter-spacing: 1px;
         }
-        footer {
-            background-color: #0d0d0d;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #777;
+
+        /* ==========================================================================
+           VISUAL UPGRADE: LUXURY CONTACT FORM INPUTS
+           ========================================================================== */
+        .contact-container {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 28px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            font-weight: 600;
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            box-sizing: border-box;
+            border-radius: 0;
+            transition: border-color 0.3s, padding-left 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: #d4af37;
+            padding-left: 5px;
+        }
+        select.form-control {
+            cursor: pointer;
+            background-color: #121212;
+            padding-bottom: 10px;
         }
 
         /* ==========================================================================
@@ -131,44 +213,88 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95); /* Deep dark backdrop */
+            background-color: rgba(10, 10, 10, 0.98);
             z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
         }
-        /* Class applied automatically by JavaScript when image is clicked */
         .lightbox-overlay.active {
             opacity: 1;
             pointer-events: auto;
         }
         .lightbox-img {
-            max-width: 90%;
+            max-width: 92%;
             max-height: 85vh;
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+            transform: scale(0.97);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .lightbox-overlay.active .lightbox-img {
             transform: scale(1);
         }
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
+            top: 30px;
+            right: 40px;
+            color: #888;
             font-size: 2.5rem;
-            font-weight: 300;
+            font-weight: 200;
             cursor: pointer;
             user-select: none;
-            transition: color 0.2s;
+            transition: color 0.2s, transform 0.2s;
         }
         .lightbox-close:hover {
             color: #d4af37;
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           SCROLL TO TOP BUTTON
+           ========================================================================== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 48px;
+            height: 48px;
+            background-color: rgba(20, 20, 20, 0.85);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top-btn:hover {
+            border-color: #d4af37;
+            background-color: #d4af37;
+            color: #121212;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            padding: 3rem 2rem;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         /* ==========================================================================
@@ -177,51 +303,66 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 1rem;
+                padding: 1.2rem 1rem;
                 position: absolute;
             }
             h1 {
-                font-size: 1.3rem;
-                margin-bottom: 10px;
+                font-size: 1.2rem;
+                margin-bottom: 12px;
             }
             nav a {
-                margin: 0 10px;
-                font-size: 0.8rem;
+                margin: 0 12px;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+            nav a:hover {
+                letter-spacing: 1px;
             }
             .hero {
-                padding-top: 60px;
+                padding-top: 80px;
             }
             .hero h2 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             .hero p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             section {
-                padding: 4rem 1rem;
+                padding: 5rem 1.5rem;
+            }
+            section h2 {
+                font-size: 1.6rem;
             }
             .gallery {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
             }
             .gallery-item {
-                height: 250px;
+                height: 260px;
             }
             .lightbox-close {
-                top: 15px;
-                right: 20px;
-                font-size: 2rem;
+                top: 20px;
+                right: 25px;
+                font-size: 2.2rem;
+            }
+            .scroll-top-btn {
+                bottom: 25px;
+                right: 25px;
+                width: 42px;
+                height: 42px;
             }
         }
     </style>
 </head>
 <body>
 
+    <div id="top"></div>
+
     <header>
         <h1>ENIGMATIC VISUALS</h1>
         <nav>
-            <a href="#artwork">Artwork Collection</a>
-            <a href="#photography">Photography Portfolio</a>
+            <a href="#artwork">Artwork</a>
+            <a href="#photography">Photography</a>
             <a href="#about">About</a>
             <a href="#contact">Inquire</a>
         </nav>
@@ -235,10 +376,10 @@
 
     <section id="artwork">
         <h2>Fine Art Collection</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px auto; color: #aaa;">
+        <p style="max-width: 600px; margin: 0 auto 40px auto; color: #888; font-size: 0.95rem; letter-spacing: 0.5px;">
             Original, moody art designs crafted by hand. Every piece in our upcoming collection will be available as a premium, professional-grade canvas print.
         </p>
-        <div class="gallery" id="artwork-gallery">
+        <div class="gallery">
             <div class="coming-soon-box">
                 <p>Custom canvas print collection arriving soon. Inquire directly for commission requests.</p>
             </div>
@@ -247,33 +388,59 @@
 
     <section id="photography" class="bg-dark-alternate">
         <h2>Photography Portfolio</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px auto; color: #aaa;">
-            Authentic action capture, striking portraiture, and atmospheric landscape imagery shot with a deep, dramatic perspective. Click any photograph to view it in full screen.
+        <p style="max-width: 600px; margin: 0 auto 40px auto; color: #888; font-size: 0.95rem; letter-spacing: 0.5px;">
+            Authentic action capture, striking portraiture, and atmospheric landscape imagery shot with a deep, cinematic perspective. Click any photograph to view full size.
         </p>
         <div class="gallery">
-            <div class="gallery-item"><img src="Ball.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Ball2.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Ball3.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Leaves.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Mill.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
-            <div class="gallery-item"><img src="Stones.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Ball.JPG" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Ball2.JPG" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Ball3.JPG" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Leaves.JPG" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Mill.JPG" alt="Photography Portfolio Piece"></div>
+            <div class="gallery-item"><img src="Stones.JPG" alt="Photography Portfolio Piece"></div>
         </div>
     </section>
 
     <section id="about">
         <h2>Behind the Lens & Canvas</h2>
-        <p style="max-width: 650px; margin: 0 auto; line-height: 1.6; color: #ccc;">
+        <p style="max-width: 650px; margin: 0 auto; line-height: 1.8; color: #b0b0b0; font-size: 1rem; font-weight: 300; letter-spacing: 0.5px;">
             We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic photography and original fine artwork, we offer custom visual creations designed to stand out. 
             <br><br>
             Every piece of art in our collection is available as a premium, professional-grade canvas print, curated and handled directly by us to bring a bold aesthetic right to your walls.
         </p>
     </section>
 
-    <section id="contact" style="background-color: #222;">
+    <section id="contact" class="bg-dark-alternate">
         <h2>Let's Create Something Together</h2>
-        <p>Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
-        <p style="margin-top: 20px; font-weight: bold; color: #d4af37;">To book a session or purchase a custom canvas print:</p>
-        <p>Email us at: <a href="mailto:enigmaticarts.sb@outlook.com" style="color: #fff; text-decoration: underline;">enigmaticarts.sb@outlook.com</a></p>
+        <p style="color: #888; font-size: 0.95rem; margin-bottom: 40px;">Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
+        
+        <div class="contact-container">
+            <form id="nativeMailForm" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">What can we help you with?</label>
+                    <select id="interest" class="form-control" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="Booking a Photography Session">Book a Photography Session</option>
+                        <option value="Canvas Print Custom Order">Inquire About a Canvas Print</option>
+                        <option value="General Commission / Other">General Commission / Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" class="form-control" placeholder="Tell us about your project or print request..." style="resize: vertical;" required></textarea>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button type="submit" class="btn" style="width: 100%; max-width: 280px; margin-top: 10px;">Open Mail Client</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <div class="lightbox-overlay" id="lightbox">
@@ -281,17 +448,19 @@
         <img class="lightbox-img" id="lightbox-target" src="" alt="Enlarged view">
     </div>
 
+    <a href="#top" class="scroll-top-btn" id="scrollTopBtn">&#8593;</a>
+
     <footer>
         <p>&copy; 2026 Enigmatic Visuals | All Rights Reserved</p>
     </footer>
 
     <script>
+        // --- Lightbox Code ---
         const lightbox = document.getElementById('lightbox');
         const lightboxTarget = document.getElementById('lightbox-target');
         const lightboxClose = document.getElementById('lightbox-close');
         const galleryItems = document.querySelectorAll('.gallery-item img');
 
-        // Open Lightbox when clicking any image inside a gallery-item
         galleryItems.forEach(image => {
             image.parentElement.addEventListener('click', () => {
                 lightboxTarget.src = image.src;
@@ -300,19 +469,47 @@
             });
         });
 
-        // Close Lightbox clicking the "X"
         lightboxClose.addEventListener('click', () => {
             lightbox.classList.remove('active');
-            lightboxTarget.src = ""; // Clear memory path
+            lightboxTarget.src = "";
         });
 
-        // Close Lightbox clicking anywhere on the dark background
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.classList.remove('active');
                 lightboxTarget.src = "";
             }
         });
+
+        // --- Scroll-to-Top Visibility Toggle ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        // --- DIRECT EMAIL CLIENT LAUNCH ---
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            const emailTarget = "enigmaticarts.sb@outlook.com";
+            const subject = encodeURIComponent(`Enigmatic Visuals Inquiry: ${interest}`);
+            
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Interest: ${interest}\n\n` +
+                `Message:\n${message}`
+            );
+            
+            window.location.href = `mailto:${emailTarget}?subject=${subject}&body=${body}`;
+        }
     </script>
 
 </body>
