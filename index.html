@@ -83,6 +83,9 @@
         section {
             padding: 6rem 2rem 4rem 2rem;
         }
+        .bg-dark-alternate {
+            background-color: #222222;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -96,7 +99,15 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
+        }
+        /* Style for placeholder messaging when galleries are empty */
+        .coming-soon-box {
+            grid-column: 1 / -1;
+            padding: 40px;
+            border: 1px dashed #444;
+            border-radius: 5px;
+            color: #888;
+            font-style: italic;
         }
         footer {
             background-color: #0d0d0d;
@@ -105,94 +116,4 @@
             color: #777;
         }
 
-        /* ==========================================================================
-           MOBILE OPTIMIZATION (Screens under 768px wide)
-           ========================================================================== */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-                position: absolute;
-            }
-            h1 {
-                font-size: 1.3rem;
-                margin-bottom: 10px;
-            }
-            nav a {
-                margin: 0 10px;
-                font-size: 0.8rem;
-            }
-            .hero {
-                padding-top: 60px;
-            }
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            section {
-                padding: 4rem 1rem;
-            }
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .gallery-item {
-                height: 250px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>ENIGMATIC VISUALS</h1>
-        <nav>
-            <a href="#portfolio">Our Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Inquire</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h2>Capturing the Unseen.</h2>
-        <p>Authentic Photography & Custom Canvas Art Prints</p>
-        <a href="#contact" class="btn">Book or Order Prints</a>
-    </section>
-
-    <section id="portfolio">
-        <h2>Our Collection</h2>
-        <p style="margin-bottom: 30px; color: #aaa;">Custom premium canvas prints available for all artwork pieces below.</p>
-        <div class="gallery">
-            <div class="gallery-item"><img src="Ball.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-            <div class="gallery-item"><img src="Ball2.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-            <div class="gallery-item"><img src="Ball3.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-            <div class="gallery-item"><img src="Leaves.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-            <div class="gallery-item"><img src="Mill.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-            <div class="gallery-item"><img src="Stones.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>Behind the Lens & Canvas</h2>
-        <p style="max-width: 650px; margin: 0 auto; line-height: 1.6; color: #ccc;">
-            We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic portrait photography and original fine artwork, we offer custom visual creations designed to stand out. 
-            <br><br>
-            Every piece of art in our collection is available as a premium, professional-grade canvas print, curated and handled directly by us to bring a bold aesthetic right to your walls.
-        </p>
-    </section>
-
-    <section id="contact" style="background-color: #222;">
-        <h2>Let's Create Something Together</h2>
-        <p>Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
-        <p style="margin-top: 20px; font-weight: bold; color: #d4af37;">To book a session or purchase a custom canvas print:</p>
-        <p>Email us at: <a href="mailto:enigmaticarts.sb@outlook.com" style="color: #fff; text-decoration: underline;">enigmaticarts.sb@outlook.com</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Enigmatic Visuals | All Rights Reserved</p>
-    </footer>
-
-</body>
-</html>
+        /* =================
