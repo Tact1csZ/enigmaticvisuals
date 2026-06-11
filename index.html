@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enigmatic Visuals | Photography</title>
+    <title>Enigmatic Visuals | Photography & Fine Art</title>
     <style>
         /* ==========================================================================
            DESKTOP & BASE STYLES (Default)
@@ -20,11 +20,11 @@
             background: rgba(0, 0, 0, 0.9);
             position: fixed;
             width: 100%;
-            box-sizing: border-box; /* Prevents header from stretching past screen width */
+            box-sizing: border-box;
             top: 0;
             z-index: 100;
             display: flex;
-            justify-content: space-between; /* Pushes title to left, nav to right */
+            justify-content: space-between;
             align-items: center;
         }
         h1 {
@@ -62,6 +62,7 @@
         .hero p {
             font-size: 1.2rem;
             margin-top: 0;
+            letter-spacing: 1px;
         }
         .btn {
             padding: 12px 30px;
@@ -74,9 +75,13 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #bfa030;
         }
         section {
-            padding: 6rem 2rem 4rem 2rem; /* Added top padding so fixed header doesn't block titles */
+            padding: 6rem 2rem 4rem 2rem;
         }
         .gallery {
             display: grid;
@@ -91,6 +96,7 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
         }
         footer {
             background-color: #0d0d0d;
@@ -104,37 +110,36 @@
            ========================================================================== */
         @media (max-width: 768px) {
             header {
-                flex-direction: column; /* Stack Title on top of Links */
+                flex-direction: column;
                 padding: 1rem;
-                position: absolute; /* Prevents fixed header eating precious screen space on mobile */
+                position: absolute;
             }
             h1 {
                 font-size: 1.3rem;
                 margin-bottom: 10px;
             }
             nav a {
-                margin: 0 10px; /* Space out links evenly horizontally */
+                margin: 0 10px;
                 font-size: 0.8rem;
             }
             .hero {
-                justify-content: center;
-                padding-top: 60px; /* Offset for stacked header */
+                padding-top: 60px;
             }
             .hero h2 {
-                font-size: 2.2rem; /* Shrink title text so it doesn't break into awkward lines */
+                font-size: 2.2rem;
             }
             .hero p {
                 font-size: 1rem;
             }
             section {
-                padding: 4rem 1rem; /* Shrink heavy desktop paddings */
+                padding: 4rem 1rem;
             }
             .gallery {
-                grid-template-columns: 1fr; /* Force images to stack into a clean single column */
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
             .gallery-item {
-                height: 250px; /* Slightly shorter frames for quick scrolling */
+                height: 250px;
             }
         }
     </style>
@@ -144,45 +149,49 @@
     <header>
         <h1>ENIGMATIC VISUALS</h1>
         <nav>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Our Work</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Inquire</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Capturing the Unseen.</h2>
-        <p>Authentic, creative photography.</p>
-        <a href="#contact" class="btn">Book a Session</a>
+        <p>Authentic Photography & Custom Canvas Art Prints</p>
+        <a href="#contact" class="btn">Book or Order Prints</a>
     </section>
 
     <section id="portfolio">
-        <h2>Our Work</h2>
+        <h2>Our Collection</h2>
+        <p style="margin-bottom: 30px; color: #aaa;">Custom premium canvas prints available for all artwork pieces below.</p>
         <div class="gallery">
-            <div class="gallery-item"><img src="Ball.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
-            <div class="gallery-item"><img src="Ball2.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
-            <div class="gallery-item"><img src="Ball3.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
-            <div class="gallery-item"><img src="Leaves.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
-            <div class="gallery-item"><img src="Mill.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
-            <div class="gallery-item"><img src="Stones.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Photography piece"></div>
+            <div class="gallery-item"><img src="Ball.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
+            <div class="gallery-item"><img src="Ball2.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
+            <div class="gallery-item"><img src="Ball3.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
+            <div class="gallery-item"><img src="Leaves.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
+            <div class="gallery-item"><img src="Mill.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
+            <div class="gallery-item"><img src="Stones.JPG" style="width:100%; height:100%; object-fit:cover;" alt="Artwork piece"></div>
         </div>
     </section>
 
     <section id="about">
-        <h2>The Team behind the Lens</h2>
-        <p style="max-width: 600px; margin: 0 auto; line-height: 1.6;">
-            We are a husband and wife photography team dedicated to capturing authentic moments and telling stories through a unique, moody, and natural perspective. Whether it's an intimate portrait session or a local branding project, our focus is on making you feel comfortable while we handle the creative heavy lifting.
+        <h2>Behind the Lens & Canvas</h2>
+        <p style="max-width: 650px; margin: 0 auto; line-height: 1.6; color: #ccc;">
+            We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic portrait photography and original fine artwork, we offer custom visual creations designed to stand out. 
+            <br><br>
+            Every piece of art in our collection is available as a premium, professional-grade canvas print, curated and handled directly by us to bring a bold aesthetic right to your walls.
         </p>
     </section>
 
     <section id="contact" style="background-color: #222;">
         <h2>Let's Create Something Together</h2>
-        <p>Based in Waynesville, North Carolina — Available for travel.</p>
-        <p>Email: enigmaticarts.sb@outlook.com</p>
+        <p>Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
+        <p style="margin-top: 20px; font-weight: bold; color: #d4af37;">To book a session or purchase a custom canvas print:</p>
+        <p>Email us at: <a href="mailto:enigmaticarts.sb@outlook.com" style="color: #fff; text-decoration: underline;">enigmaticarts.sb@outlook.com</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2026 Enigmatic Visuals Photography</p>
+        <p>&copy; 2026 Enigmatic Visuals | All Rights Reserved</p>
     </footer>
 
 </body>
