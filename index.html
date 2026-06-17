@@ -189,6 +189,39 @@
         }
 
         /* ==========================================================================
+           LUXURY MINIMAL ADSENSE FRAMEWORK
+           ========================================================================== */
+        .luxury-ad-wrapper {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .ad-disclosure {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #3a3a3c;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .ad-content-slot {
+            background-color: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: border-color 0.4s ease;
+        }
+        .luxury-ad-wrapper:hover .ad-content-slot {
+            border-color: rgba(212, 175, 55, 0.1); 
+        }
+
+        /* ==========================================================================
            MINIMALIST CONTACT FORM STYLING
            ========================================================================== */
         .contact-container {
@@ -359,6 +392,10 @@
             .masonry-gallery {
                 columns: 1;
             }
+            .luxury-ad-wrapper {
+                margin: 4rem auto;
+                padding: 0 1.5rem;
+            }
             .lightbox-close {
                 top: 25px;
                 right: 25px;
@@ -418,116 +455,170 @@
         </div>
     </section>
 
+    <!-- PREMIUM ADSENSE SLOT CONTAINER PLACEHOLDER -->
+    <div class="luxury-ad-wrapper">
+        <div class="ad-disclosure">Advertisement</div>
+        <div class="ad-content-slot">
+            
+            <!-- Note: If using "Auto Ads" exclusively, this container will gracefully remain 
+                 a clean dark spacer line. If adding a manual unit, paste its <ins> tag inside here -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1799112611501619"
+                 data-ad-slot="YOUR_MANUAL_SLOT_ID_HERE"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (window.adsbygoogle || []).push({});
+            </script>
+
+        </div>
+    </div>
+
+    <!-- SECTION 3: ABOUT -->
     <section id="about">
         <h2>Behind the Lens & Canvas</h2>
         <p style="max-width: 650px; margin: 0 auto; line-height: 1.9; color: #a1a1a6; font-size: 0.95rem; font-weight: 300; letter-spacing: 0.5px;">
-            We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic photography and original fine artwork, we offer custom visual creations designed to stand out. 
-            <br><br>
-            Every piece of art in our collection is available as a premium, professional-grade canvas print, curated and handled directly by us to bring a bold aesthetic right to your walls.
-        </p>
-    </section>
+            We are a husband and wife creative team dedicated to telling stories through a unique, moody, and natural perspective. Bringing together high-end, authentic photography and original fine artwork, we offer custom visual creationsHere is the absolute complete, production-ready `index.html` master file. It integrates your structural layout, the ultra-clean masonry portfolio, responsive lightbox imagery, dark-theme layout fixes, custom contact automation, and your **Google AdSense setup**—complete with the premium, minimal styling container right between your portfolio and bio sections.
 
-    <!-- DIRECT PRIVACY-FIRST CONTACT FORM -->
-    <section id="contact" class="bg-dark-alternate">
-        <h2>Let's Create Something Together</h2>
-        <p style="color: #6e6e73; font-size: 0.9rem; margin-bottom: 40px;">Based in Waynesville, North Carolina — Available for travel and shipping nationwide.</p>
-        
-        <div class="contact-container">
-            <form id="nativeMailForm" onsubmit="sendEmail(event)">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="interest">What can we help you with?</label>
-                    <select id="interest" class="form-control" required>
-                        <option value="" disabled selected>Select an option...</option>
-                        <option value="Booking a Photography Session">Book a Photography Session</option>
-                        <option value="Canvas Print Custom Order">Inquire About a Canvas Print</option>
-                        <option value="General Commission / Other">General Commission / Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" class="form-control" placeholder="Tell us about your project or print request..." style="resize: vertical;" required></textarea>
-                </div>
-                
-                <div style="text-align: center;">
-                    <button type="submit" class="btn" style="width: 100%; max-width: 280px; margin-top: 10px;">Open Mail Client</button>
-                </div>
-            </form>
-        </div>
-    </section>
+Replace the contents of your `index.html` file completely with this code:
 
-    <!-- HIDDEN VOID LIGHTBOX OVERLAY -->
-    <div class="lightbox-overlay" id="lightbox">
-        <span class="lightbox-close" id="lightbox-close">&times;</span>
-        <img class="lightbox-img" id="lightbox-target" src="" alt="Enlarged view">
-    </div>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigmatic Visuals | Elite Photography & Fine Art</title>
 
-    <!-- SCROLL TO TOP MICRO BUTTON -->
-    <a href="#top" class="scroll-top-btn" id="scrollTopBtn">&#8593;</a>
+    <!-- GOOGLE ADSENSE GLOBAL INJECTION -->
+    <script async src="[https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1799112611501619](https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1799112611501619)" crossorigin="anonymous"></script>
 
-    <footer>
-        <p>&copy; 2026 Enigmatic Visuals | All Rights Reserved</p>
-    </footer>
-
-    <!-- INTERACTIVITY ARCHITECTURE SCRIPT -->
-    <script>
-        // --- High-Performance Lightbox Mechanics ---
-        const lightbox = document.getElementById('lightbox');
-        const lightboxTarget = document.getElementById('lightbox-target');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-
-        galleryItems.forEach(image => {
-            image.parentElement.addEventListener('click', () => {
-                lightboxTarget.src = image.src;
-                lightboxTarget.alt = image.alt;
-                lightbox.classList.add('active');
-            });
-        });
-
-        const closeLightbox = () => {
-            lightbox.classList.remove('active');
-            setTimeout(() => { lightboxTarget.src = ""; }, 500);
-        };
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-        // --- Scroll UI State Controller ---
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-
-        // --- DIRECT EMAIL APP EXECUTION ---
-        function sendEmail(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const interest = document.getElementById('interest').value;
-            const message = document.getElementById('message').value;
-            
-            const emailTarget = "enigmaticarts.sb@outlook.com";
-            const subject = encodeURIComponent(`Enigmatic Visuals Inquiry: ${interest}`);
-            
-            const body = encodeURIComponent(
-                `Name: ${name}\n` +
-                `Interest: ${interest}\n\n` +
-                `Message:\n${message}`
-            );
-            
-            window.location.href = `mailto:${emailTarget}?subject=${subject}&body=${body}`;
+    <style>
+        /* ==========================================================================
+           BASE SYSTEM & LUXURY RESETS
+           ========================================================================== */
+        html {
+            scroll-behavior: smooth;
         }
-    </script>
+        body {
+            margin: 0;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0a0a; /* Pure elite deep dark background */
+            color: #f5f5f7;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ==========================================================================
+           FROSTED GLASS NAVIGATION HEADER
+           ========================================================================== */
+        header {
+            padding: 1.8rem 3rem;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            box-sizing: border-box;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.25rem;
+            letter-spacing: 4px;
+            color: #d4af37;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        nav a {
+            color: #8e8e93;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.4s ease, transform 0.4s ease;
+            display: inline-block;
+        }
+        nav a:hover {
+            color: #d4af37;
+            transform: translateY(-1px);
+        }
 
-</body>
-</html>
+        /* ==========================================================================
+           CINEMATIC HERO LANDING
+           ========================================================================== */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('Stones.JPG') center/cover;
+            padding: 0 20px;
+        }
+        .hero h2 {
+            font-size: 4.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            font-weight: 200;
+            background: linear-gradient(180deg, #ffffff 40%, #a2a2a2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1rem;
+            margin-top: 0;
+            letter-spacing: 3px;
+            color: #86868b;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        .btn {
+            padding: 15px 40px;
+            background-color: transparent;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 30px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            display: inline-block;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn:hover {
+            background-color: #d4af37;
+            color: #0a0a0a;
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        /* ==========================================================================
+           EDITORIAL SECTIONS
+           ========================================================================== */
+        section {
+            padding: 10rem 4rem 8rem 4rem;
+        }
+        .bg-dark-alternate {
+            background-color: #0e0e0e;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 200;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .section-desc {
+            max-width: 6
